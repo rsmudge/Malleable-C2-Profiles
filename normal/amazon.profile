@@ -1,6 +1,8 @@
 #
 # Amazon browsing traffic profile
 # 
+# Author: @harmj0y
+#
 
 set sleeptime "5000";
 set jitter    "0";

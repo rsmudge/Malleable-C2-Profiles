@@ -2,6 +2,8 @@
 # Safebrowsing Comms profile
 #   https://code.google.com/p/google-safe-browsing/wiki/SafeBrowsingDesign
 #
+# Author: @harmj0y
+#
 
 set sleeptime "30000"; # Use a 30s interval
 set jitter    "20"; # 20% jitter

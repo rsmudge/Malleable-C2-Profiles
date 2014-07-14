@@ -3,6 +3,8 @@
 #   client - https://malwr.com/analysis/NjIwNTU2ODA2OTUxNDcwNmJiMTMzYzk4YzU4NWQyZDQ/
 #   server - http://malware-traffic-analysis.net/2014/04/05/index.html
 #
+# Author: @harmj0y
+#
 
 set sleeptime "30000";
 set jitter    "5";

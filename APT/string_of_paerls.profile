@@ -2,6 +2,8 @@
 # String of Paerls profile
 #   http://blogs.cisco.com/security/a-string-of-paerls/
 #
+# Author: @harmj0y
+#
 
 set sleeptime "30000"; # use a ~30 second main interval
 set jitter    "30"; # 35% jitter

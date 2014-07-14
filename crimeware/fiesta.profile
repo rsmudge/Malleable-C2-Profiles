@@ -2,6 +2,8 @@
 # Fiesta Exploit Kit traffic profile
 #   http://malware-traffic-analysis.net/2014/04/05/index.html
 #
+# Author: @harmj0y
+#
 
 set sleeptime "30000"; # use a ~30s delay between callbacks
 set jitter    "10"; # throw in a 10% jitter

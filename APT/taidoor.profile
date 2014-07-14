@@ -2,6 +2,8 @@
 # Taidoor Profile
 #   http://contagiodump.blogspot.com/2013/04/collection-of-pcap-files-from-malware.html
 #
+# Author: @harmj0y
+#
 
 set sleeptime "40000"; # use a ~40 second main interval
 set jitter    "35"; # 35% jitter

@@ -2,6 +2,8 @@
 # Magnitude Exploit Kit traffic profile
 #   http://malware-traffic-analysis.net/2014/06/17/index.html
 #
+# Author: @harmj0y
+#
 
 set sleeptime "45000"; # use a ~45s delay between callbacks
 set jitter    "50"; # throw in a 50% jitter

@@ -1,6 +1,8 @@
 #
 # Standard Pandora traffic profile
 # 
+# Author: @harmj0y
+#
 
 set sleeptime "1000";
 set jitter    "0";

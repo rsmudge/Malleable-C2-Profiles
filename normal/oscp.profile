@@ -2,6 +2,8 @@
 # Online Certificate Status Protocol (OCSP) Profile
 #   http://tools.ietf.org/html/rfc6960
 #
+# Author: @harmj0y
+#
 
 set sleeptime "20000"; # Use a 20s interval
 set jitter    "20"; # 20% jitter
