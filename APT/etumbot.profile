@@ -2,6 +2,8 @@
 # Etumbot Profile
 #   http://www.arbornetworks.com/asert/2014/06/illuminating-the-etumbot-apt-backdoor/
 #
+# Author: @harmj0y
+#
 
 set sleeptime "5000";
 set jitter    "0";
