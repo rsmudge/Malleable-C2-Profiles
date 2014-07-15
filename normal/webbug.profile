@@ -39,14 +39,21 @@ http-get {
 }
 
 http-post {
-	set uri "/submit.php";
+	set uri "/___utm.gif";
 	client {
 		header "Content-Type" "application/octet-stream";
 
 		id {
-			netbios;
-			parameter "id";
+			prepend "UA-220";
+			append "-2";
+			parameter "utmac";
 		}
+
+		parameter "utmcn" "1";
+		parameter "utmcs" "ISO-8859-1";
+		parameter "utmsr" "1280x1024";
+		parameter "utmsc" "32-bit";
+		parameter "utmul" "en-US";
 
 		output {
 			print;
@@ -54,9 +61,12 @@ http-post {
 	}
 
 	server {
-		header "Content-Type" "text/html";
+		header "Content-Type" "image/gif";
 
 		output {
+			prepend "\x01\x00\x01\x00\x00\x02\x01\x44\x00\x3b";
+			prepend "\xff\xff\xff\x21\xf9\x04\x01\x00\x00\x00\x2c\x00\x00\x00\x00";
+			prepend "\x47\x49\x46\x38\x39\x61\x01\x00\x01\x00\x80\x00\x00\x00\x00";
 			print;
 		}
 	}
