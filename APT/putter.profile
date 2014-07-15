@@ -1,5 +1,7 @@
 # Putter Panda HTTPCLIENT Profile
 # http://resources.crowdstrike.com/putterpanda/
+#
+# Author: @armitagehacker
 
 # 500ms is default callback for this Web C2 shell
 set sleeptime "500";
