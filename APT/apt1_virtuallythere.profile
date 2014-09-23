@@ -15,7 +15,7 @@ https-certificate {
 	set CN	"new";
 }
 
-# since *cough* presumably you're using an HTTP Beacon...
+# since *cough* presumably you're using an HTTPS Beacon...
 http-get {
 	set uri "/zOMGAPT";
 
