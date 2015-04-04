@@ -41,7 +41,7 @@ http-get {
 }
 
 http-post {
-    set uri "/FC001/JOHN-";
+    set uri "/FC002/JOHN-";
 
     client {
 
