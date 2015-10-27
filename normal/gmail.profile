@@ -2,15 +2,15 @@
 #
 # Author: @ChrisTruncer
 
-#https-certificate {
-#	set CN       "gmail.com";
-#	set O        "Google's GMail";
-#	set C        "US";
-#	set L        "Mountain View";
-#	set OU       "Google Mail";
-#	set ST       "CA";
-#	set validity "365";
-#}
+https-certificate {
+	set CN       "gmail.com";
+	set O        "Google's GMail";
+	set C        "US";
+	set L        "Mountain View";
+	set OU       "Google Mail";
+	set ST       "CA";
+	set validity "365";
+}
 
 http-get {
 	set uri "/_/scs/mail-static/_/js/";
@@ -72,10 +72,11 @@ http-post {
             header "Cookie";
         }
 
-        output{
-        	base64;
-			print;
-        }
+		output{
+			base64;
+			prepend "SID=";
+			header "Cookie";
+		}
 	}
 
 	server {
