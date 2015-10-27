@@ -2,15 +2,15 @@
 #
 # Author: @ChrisTruncer
 
-https-certificate {
-	set CN       "gmail.com";
-	set O        "Google's GMail";
-	set C        "US";
-	set L        "Mountain View";
-	set OU       "Google Mail";
-	set ST       "CA";
-	set validity "365";
-}
+#https-certificate {
+#	set CN       "gmail.com";
+#	set O        "Google's GMail";
+#	set C        "US";
+#	set L        "Mountain View";
+#	set OU       "Google Mail";
+#	set ST       "CA";
+#	set validity "365";
+#}
 
 http-get {
 	set uri "/_/scs/mail-static/_/js/";
@@ -26,6 +26,7 @@ http-get {
 		parameter "Accept-Language" "en-US,en;q=0.5";
 		parameter "Accept-Encoding" "gzip, deflate";
 		parameter "DNT" "1";
+		parameter "Cookie" "GMAIL_RTT=265;";
 
 	}
 
@@ -63,19 +64,17 @@ http-post {
 		parameter "ui" "d3244c4707";
 		parameter "hop" "6928632";
 		parameter "start" "0";
-		parameter "ver" "CYIddE5Mgok.en.";
-		header "Cookie" "GMAIL_AT=aq6fC0PF8o4j54nzDfTVMI65mfmyL1eaGZ;";
 		header "Content-Type" "application/x-www-form-urlencoded;charset=utf-8";
 
 		id {
 			base64;
-			prepend "SID="
+			prepend "OSID=";
             header "Cookie";
         }
 
         output{
         	base64;
-        	print;
+			print;
         }
 	}
 
