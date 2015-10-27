@@ -69,7 +69,7 @@ http-post {
 		id {
 			base64;
 			prepend "OSID=";
-            header "Cookie";
+			header "Cookie";
         }
 
 		output{
