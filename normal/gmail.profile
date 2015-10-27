@@ -38,18 +38,21 @@ http-get {
 		header "Alternate-Protocol" "443:quic,p=1";
 		
 		output{
-			prepend "try{";
-			prepend "O(L.Oa(),"sy580")";
-			prepend "N(L.Oa(),"sy580");P(L.Oa(),"sy580");";
-			prepend "}catch(e){_DumpException(e)}";
-			prepend "try{";
-			prepend "O(L.Oa(),"sy558");";
-			prepend "N(L.Oa(),"sy558");P(L.Oa(),"sy558");";
-			prepend "}catch(e){_DumpException(e)}";
-			prepend "try{";
+			prepend "try(";
+			prepend "O(L.Oa(),\"sy580\")";
+			prepend "N(L.Oa(),\"sy580\");P(L.Oa(),\"sy580\");";
+			prepend ")catch(e)(_DumpException(e))";
+			prepend "try(";
+			prepend "O(L.Oa(),\"sy558\");";
+			prepend "N(L.Oa(),\"sy558\");P(L.Oa(),\"sy558\");";
+			prepend ")catch(e)(_DumpException(e))";
+			prepend "try(";
 
-			base64;
+			append "var f2=function(a)(a=a.wa;return\"application/chromium-bookmark-folder\"==a||\"application/chromium-root-folder\"==a||\"application/vnd.google-apps.folder\"==a||\"application/vnd.google-apps.photoalbum\"==a||\"application/vnd.google-apps.rollupphotoalbum\"==a)";
+			append ",g2=function(a)(return a.ra),s8d=function(a)(return a?hb(a,function(a)(return new UP(a)):[]),h2=function(a)(switch(a)(case \"all\":case \"docs-images\":case \"docs-images-and-videos\":case \"docs-videos\":case \"documents\":case \"drawings\":case \"folders\":case \"forms\":case \"pdfs\":case \"presentations\":case \"sites\":case \"spreadsheets\":case \"tables\":return!0)return!1); O(L.Oa(),\"sy588\")";
+
 			print;
+
 		}
 	}
 }
@@ -66,7 +69,8 @@ http-post {
 
 		id {
 			base64;
-            parameter "rid";
+			prepend "SID="
+            header "Cookie";
         }
 
         output{
@@ -84,11 +88,16 @@ http-post {
 
 		output {
 
-			prepend "[[["apm","ADvV1IcvJ9BBLLU17m4tk0EvwRCdv0zIMjoxNDQ1NTQzNzQwOTcx"]";
-			prepend ",["ci",[]";
-			prepend "]";
+			prepend "[[[\"apm\",\"";
 
-			base64;
+			append "\"]";
+			append ",[\"ci\",[]";
+			append "]";
+			append ",[\"cm\",[]";
+			append ",[]";
+			append "]";
+			append "],'dbb8796a80d45e1f']";
+
 			print;
 		}
 
