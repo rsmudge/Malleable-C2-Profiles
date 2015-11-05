@@ -74,8 +74,7 @@ http-post {
 
 		output{
 			base64;
-			prepend "SID=";
-			header "Cookie";
+			print;
 		}
 	}
 
