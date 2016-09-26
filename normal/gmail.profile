@@ -12,6 +12,11 @@ https-certificate {
 	set validity "365";
 }
 
+set sleeptime "60000";
+set pipename "interprocess_##";
+set spawnto "msinfo32.exe";
+set jitter "15";
+
 http-get {
 	set uri "/_/scs/mail-static/_/js/";
 	client {
