@@ -4,7 +4,7 @@
 
 https-certificate {
 	set CN       "gmail.com";
-	set O        "Google's GMail";
+	set O        "Google GMail";
 	set C        "US";
 	set L        "Mountain View";
 	set OU       "Google Mail";
@@ -16,6 +16,7 @@ set sleeptime "60000";
 set pipename "interprocess_##";
 set spawnto "userinit.exe";
 set jitter "15";
+set dns_idle "8.8.4.4";
 
 http-get {
 	set uri "/_/scs/mail-static/_/js/";
