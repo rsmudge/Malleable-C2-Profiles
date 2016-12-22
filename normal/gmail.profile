@@ -28,11 +28,11 @@ http-get {
 			header "Cookie";
 		}
 
-		parameter "Accept" "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8";
-		parameter "Accept-Language" "en-US,en;q=0.5";
-		parameter "Accept-Encoding" "gzip, deflate";
-		parameter "DNT" "1";
-		parameter "Cookie" "GMAIL_RTT=265;";
+		header "Accept" "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8";
+		header "Accept-Language" "en-US,en;q=0.5";
+		header "Accept-Encoding" "gzip, deflate";
+		header "DNT" "1";
+		header "Cookie" "GMAIL_RTT=265;";
 
 	}
 
