@@ -1,6 +1,9 @@
 # Meterpreter profile
 # 
 # This was a fun exercise, make Beacon Meterpreter-like. :)
+#
+# https://www.metasploit.com/
+# 
 
 # 100ms sleep time. 
 set sleeptime "100";
@@ -75,7 +78,6 @@ http-post {
 	set uri "/ucW";
 
 	client {
-		header "Accept" "";
 		header "Cache-Control" "no-cache";
 		header "Connection" "Keep-Alive";
 		header "Pragma" "no-cache";
