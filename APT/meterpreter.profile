@@ -12,6 +12,9 @@ set sleeptime "100";
 set spawnto_x86 "%windir%\\syswow64\\notepad.exe";
 set spawnto_x64 "%windir%\\sysnative\\notepad.exe";
 
+# process injection tweak
+set hijack_remote_thread "false";
+
 # propagate user-agent to all transactions
 set useragent "Mozilla/5.0 (Windows NT 6.1; Trident/7.0; rv:11.0) like Gecko";
 
@@ -24,10 +27,12 @@ stage {
 
 	transform-x86 {
 		strrep "beacon.dll" "metsrv.dll";
+		append "stdapi_sys_process_getpid";
 	}
 
 	transform-x64 {
 		strrep "beacon.x64.dll" "metsrv.dll";
+		append "stdapi_sys_process_getpid";
 	}
 }
 
