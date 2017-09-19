@@ -76,7 +76,17 @@ http-post {
 
 # dress up the staging process too
 http-stager {
+	set uri_x86 "/_init.gif";
+	set uri_x64 "/__init.gif";
+
 	server {
 		header "Content-Type" "image/gif";
+
+		output {
+			prepend "\x01\x00\x01\x00\x00\x02\x01\x44\x00\x3b";
+			prepend "\xff\xff\xff\x21\xf9\x04\x01\x00\x00\x00\x2c\x00\x00\x00\x00";
+			prepend "\x47\x49\x46\x38\x39\x61\x01\x00\x01\x00\x80\x00\x00\x00\x00";
+			print;
+		}
 	}
 }
