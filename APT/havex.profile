@@ -12,26 +12,38 @@
 #
 # Author: @armitagehacker
 
+set sample_name "HaveX Trojan";
+
 set sleeptime "30000";
 
 set useragent "Mozilla/5.0 (Windows; U; MSIE 7.0; Windows NT 5.2) Java/1.5.0_08";
 
-set pipename "mypipe-f";
-set pipename_stager "mypipe-h";
+set pipename "mypipe-f##";
+set pipename_stager "mypipe-h##";
 
+# Clone some header values (Sample from: https://malshare.com/sample.php?action=detail&hash=c6e161a948f4474849d5740b2f27964a)
+# ./peclone c6e161a948f4474849d5740b2f27964a
 stage {
-	# seems legit	
-	set compile_time "16 May 2014 9:42:28";
+	set checksum       "0";
+	set compile_time   "30 Dec 2013 07:53:48";
+	set entry_point    "134733";
+	set image_size_x86 "348160";
+	set image_size_x64 "348160";
+	set name           "Tmprovider.dll";
+	set rich_header    "\x63\x02\x25\x0f\x27\x63\x4b\x5c\x27\x63\x4b\x5c\x27\x63\x4b\x5c\x9a\x2c\xdd\x5c\x24\x63\x4b\x5c\x2e\x1b\xde\x5c\x3b\x63\x4b\x5c\x2e\x1b\xcf\x5c\x1b\x63\x4b\x5c\x2e\x1b\xc8\x5c\x8f\x63\x4b\x5c\x00\xa5\x30\x5c\x28\x63\x4b\x5c\x27\x63\x4a\x5c\x97\x63\x4b\x5c\x2e\x1b\xc1\x5c\x60\x63\x4b\x5c\x2e\x1b\xd9\x5c\x26\x63\x4b\x5c\x39\x31\xdf\x5c\x26\x63\x4b\x5c\x2e\x1b\xda\x5c\x26\x63\x4b\x5c\x52\x69\x63\x68\x27\x63\x4b\x5c\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00";
+
+	# disable this little obfuscation
+	set stomppe        "false";
 
 	# make these things havex-ish
 	transform-x86 {
-		strrep "ReflectiveLoader" "runDll";
-		strrep "beacon.dll"       "7CFC52.dll";
+		strrep "ReflectiveLoader" "RunDllEntry";
+		strrep "beacon.dll"       "";
 	}
 
 	transform-x64 {
-		strrep "ReflectiveLoader" "runDll";
-		strrep "beacon.x64.dll"   "7CFC52CD3F.dll";
+		strrep "ReflectiveLoader" "RunDllEntry";
+		strrep "beacon.x64.dll"   "";
 	}
 	
 	# strings gathered from Yara rules and sandbox string dumps
