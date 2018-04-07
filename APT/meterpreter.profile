@@ -4,6 +4,7 @@
 #
 # https://www.metasploit.com/
 # 
+set sample_name "Meterpreter";
 
 # 100ms sleep time. 
 set sleeptime "100";
@@ -18,21 +19,44 @@ set hijack_remote_thread "false";
 # propagate user-agent to all transactions
 set useragent "Mozilla/5.0 (Windows NT 6.1; Trident/7.0; rv:11.0) like Gecko";
 
-# set some memory indicators to resemble the metasploit rDLL
+# set some PE and memory indicators to resemble the metasploit rDLL
 stage {
-	set compile_time "17 Feb 2017 19:34:11";
+	# PE header fields
+	set checksum "0";
+	set compile_time "08 May 2017 23:13:38";
+	set entry_point    "558586";
 	set image_size_x86 "987136";
 	set image_size_x64 "1232896";
-	set userwx "true";
+	set name "metsrv.dll";
+	set rich_header "\xf4\x1f\x93\x1a\xb0\x7e\xfd\x49\xb0\x7e\xfd\x49\xb0\x7e\xfd\x49\xf6\x2f\x1c\x49\x9d\x7e\xfd\x49\xf6\x2f\x22\x49\xaf\x7e\xfd\x49\xf6\x2f\x1d\x49\x0b\x7e\xfd\x49\xcd\x07\x1d\x49\x3f\x7f\xfd\x49\xb0\x7e\xfc\x49\x63\x7e\xfd\x49\xb9\x06\x6e\x49\xa1\x7e\xfd\x49\xb9\x06\x7e\x49\xb1\x7e\xfd\x49\xbd\x2c\x22\x49\xb1\x7e\xfd\x49\xbd\x2c\x1d\x49\xaa\x7e\xfd\x49\xbd\x2c\x21\x49\xb1\x7e\xfd\x49\xbd\x2c\x23\x49\xb1\x7e\xfd\x49\x52\x69\x63\x68\xb0\x7e\xfd\x49\x00\x00\x00\x00\x00\x00\x00\x00";
 
+	# obfuscations
+	set userwx "true";
+	set stomppe "false";
+
+	# strings
+	string "stdapi_sys_process_getpid";
+	stringw "%04x-%04x:%s";
+	stringw "pipe";
+	stringw "SeSecurityPrivilege";
+	stringw "pipe";
+	stringw "\\\\%s\\pipe\\%s";
+	stringw "https";
+	stringw "POST";
+	stringw "POST";
+	string "[%x]";
+	string "buffer_from_file";
+	string "buffer_to_file";
+	string "channel_close";
+	string "channel_create";
+
+	# get rid of some stuff
 	transform-x86 {
-		strrep "beacon.dll" "metsrv.dll";
-		append "stdapi_sys_process_getpid";
+		strrep "beacon.dll" "";
 	}
 
 	transform-x64 {
-		strrep "beacon.x64.dll" "metsrv.dll";
-		append "stdapi_sys_process_getpid";
+		strrep "beacon.x64.dll" "";
 	}
 }
 
