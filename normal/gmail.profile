@@ -32,8 +32,6 @@ http-get {
 		header "Accept-Language" "en-US,en;q=0.5";
 		header "Accept-Encoding" "gzip, deflate";
 		header "DNT" "1";
-		header "Cookie" "GMAIL_RTT=265;";
-
 	}
 
 	server {
