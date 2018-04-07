@@ -35,7 +35,6 @@ stage {
 	set stomppe "false";
 
 	# strings
-	string "stdapi_sys_process_getpid";
 	stringw "%04x-%04x:%s";
 	stringw "pipe";
 	stringw "SeSecurityPrivilege";
@@ -44,6 +43,7 @@ stage {
 	stringw "https";
 	stringw "POST";
 	stringw "POST";
+	string "stdapi_sys_process_getpid";
 	string "[%x]";
 	string "buffer_from_file";
 	string "buffer_to_file";
