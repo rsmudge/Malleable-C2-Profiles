@@ -5,6 +5,7 @@
 #            http://intelreport.mandiant.com/
 #
 # Author: @armitagehacker
+set sample_name "APT1 Virtually There Malware";
 
 # this is the certificate
 https-certificate {

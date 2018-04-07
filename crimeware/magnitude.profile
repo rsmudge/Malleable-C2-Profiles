@@ -4,6 +4,7 @@
 #
 # Author: @harmj0y
 #
+set sample_name "Magnitude Exploit Kit";
 
 set sleeptime "45000"; # use a ~45s delay between callbacks
 set jitter    "50"; # throw in a 50% jitter

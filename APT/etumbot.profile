@@ -4,6 +4,7 @@
 #
 # Author: @harmj0y
 #
+set sample_name "Etumbot";
 
 set sleeptime "5000";
 set jitter    "0";

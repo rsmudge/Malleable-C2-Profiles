@@ -4,6 +4,7 @@
 #
 # Author: @harmj0y
 #
+set sample_name "String of Paerls";
 
 set sleeptime "30000"; # use a ~30 second main interval
 set jitter    "30"; # 35% jitter

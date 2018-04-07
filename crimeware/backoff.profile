@@ -11,6 +11,7 @@
 # Author: @armitagehacker
 #
 # 
+set sample_name "Backoff POS Malware";
 
 set sleeptime "30000"; # use a ~30s delay between callbacks
 set jitter    "10";    # throw in a 10% jitter

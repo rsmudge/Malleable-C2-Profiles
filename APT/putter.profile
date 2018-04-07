@@ -4,6 +4,8 @@
 # Author: @armitagehacker
 
 # 500ms is default callback for this Web C2 shell
+set sample_name "Putter Panda";
+
 set sleeptime "500";
 
 http-get {

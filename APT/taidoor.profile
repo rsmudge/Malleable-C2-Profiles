@@ -4,6 +4,7 @@
 #
 # Author: @harmj0y
 #
+set sample_name "Taidoor";
 
 set sleeptime "40000"; # use a ~40 second main interval
 set jitter    "35"; # 35% jitter

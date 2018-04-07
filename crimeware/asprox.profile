@@ -4,7 +4,7 @@
 #
 # Author: @harmj0y
 #
-
+set sample_name "Asprox Botnet";
 
 set sleeptime "30000"; # use a ~30s delay between callbacks
 set jitter    "20"; # throw in a 10% jitter

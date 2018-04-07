@@ -6,6 +6,7 @@
 #
 # Author: @harmj0y
 #
+set sample_name "Pitty Tiger RAT";
 
 set sleeptime "30000"; # use a ~30s delay between callbacks
 set jitter    "20"; 
