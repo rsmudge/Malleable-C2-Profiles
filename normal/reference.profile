@@ -5,7 +5,7 @@
 
 # Append random-length string (up to data_jitter value) to http-get and http-post server output
 
-set sample_name "KPMG Test Profile";
+set sample_name "Test Profile";
 set data_jitter "0";
 set dns_idle "0.0.0.0";
 set dns_max_txt "252";
